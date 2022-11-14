@@ -1,0 +1,146 @@
+ <!DOCTYPE html>
+ <html lang="en">
+ <head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;600&display=swap" rel="stylesheet"> 
+    <link rel="stylesheet" href="style.css">
+    <title>Text Checkbox</title>
+    <script>
+        function cambiaColor(){
+            var i
+            for (i=0;i<document.fcolores.color.length;i++){
+                if(document.fcolores.color[i].checked)
+                break;
+            }
+            document.bgColor= document.fcolores.color[i].value
+        }
+    </script>
+ </head>
+ <body>
+    <h2>Viridiana Rocha Rosales</h2>
+    <h1>Conoce mas sobre mi</h1>
+    <form action="" class="validar_form" method="post">
+        <h3>Idiomas que habla</h3>
+        <div><input type="checkbox" name="chck[]" value="opt 1 chckd"/><label>Español</label></div>
+        <div><input type="checkbox" name="chck[]" value="opt 2 chckd"/><label>Ingles</label></div>
+        <div><input type="checkbox" name="chck[]" value="opt 3 chckd"/><label>Frances</label></div>
+        <div><input type="checkbox" name="chck[]" value="opt 4 chckd"/><label>Italiano</label></div>
+        <div><input type="checkbox" name="chck[]" value="opt 5 chckd"/><label>Aleman</label></div>
+        <div class="errors error1"></div>
+
+        <h3>Comida</h3>
+        <div><input type="radio" name="gruporad" value="rad 1 chckd"/><label>Baguette</label></div>
+        <div><input type="radio" name="gruporad" value="rad 2 chckd"/><label>Tacos</label></div>
+        <div><input type="radio" name="gruporad" value="rad 3 chckd"/><label>Torta</label></div>
+        
+        <div class="bebidas"></div>
+        <div>
+            <h3>Qu&eacute; bebida Acostumbra?</h3>
+            <select name="select">
+                <option value="" selected>--------</option>
+                <option value="bebida">Agua</option>
+                <option value="bebida">Caf&eacute;</option>
+                <option value="bebida">T&eacute;</option>
+                <option value="bebida">Chocolate</option>
+                <option value="bebida">Malteada</option>
+                <option value="bebida">Soda</option>
+                <option value="bebida">Licuado</option>
+            </select>
+        </div> <br>
+
+        <button class="enviar">Enviar</button>
+        
+    </form>
+
+    <form method="post" action="guardardatos.php">
+        <h3>Preferencias</h3><br>
+        <input type="checkbox" name="passtime[]" value="Navegar">Navegar<br/>
+        <input type="checkbox" name="passtime[]" value="Patinar">Patinar<br/>
+        <input type="checkbox" name="passtime[]" value="Esquiar">Esquiar<br/>
+        <input type="checkbox" name="passtime[]" value="Escalar">Escalar<br/>
+        <input type="checkbox" name="passtime[]" value="Atletismo">Atletismo<br/>
+        <input type="checkbox" name="passtime[]" value="Natacion">Nataci&oacute;n</p>
+
+        <p><input type="submit" value="Submit"></p>
+    </form>
+
+    <form method="post">
+        <fieldset>
+            <h3>Animal favorito</h3>
+            <input type="checkbox" name="animal" value="gatos"/>Gatos <br/>
+            <input type="checkbox" name="animal" value="perro"/>Perro<br/>
+            <input type="checkbox" name="animal" value="pajaros"/>Pajaros<br><br>
+        </fieldset>
+    </form>
+
+    <form action="/action_page.php">
+        <h3>Qu&eacute; vehiculo usa?</h3>
+        <input type="checkbox" name="vehicle" value="Bici">Bicicleta <br>
+        <input type="checkbox" name="vehicle" value="Auto">Auto<br>
+        <input type="checkbox" name="vehicle" value="Moto">Moto<br>
+        <input type="checkbox" name="vehicle" value="Camion">Cami&oacute;n<br/><br/>
+
+        <input type="submit" value="Submit">
+    </form>
+
+    <form action="">
+        <h3>Qu&eacute; tecnolog&iacute;as conoces?</h3>
+        <p><input type="checkbox" checked /> Html5 CSS3</p>
+        <p><input type="checkbox" checked /> C#</p>
+        <p><input type="checkbox" checked /> JavaScript</p>
+        <p><input type="checkbox" checked /> PHP</p>
+        <p><input type="checkbox" checked /> JSP</p>
+        
+        <h3>Conoce las Tecnolog&iacute;as Emergentes?</h3>
+        <input type="radio" name="a" checked/>Si
+        <input type="radio" name="a"/> No
+
+        <p><input type="submit"/></p>
+    </form>
+
+    <form action="">
+        <h3>Genero</h3>
+        <input type="radio" name="a" value="hombre"/>Hombre
+        <input type="radio" name="a" value="mujer"/>Mujer
+    </form>
+
+    <form name="input" action="index.php" method="post" onsubmit="return verificaRadios(this)">
+        <h3>Para cuando desea su cita?</h3>
+        <input type="radio" name="dia" value="lunes"/>Lunes<br/>
+        <input type="radio" name="dia" value="martes"/>Martes<br/>
+        <input type="radio" name="dia" value="miercoles"/>Miercoles<br/>
+        <input type="radio" name="dia" value="jueves"/>Jueves<br/>
+        <input type="radio" name="dia" value="viernes"/>Viernes<br/> <br/>
+
+        <input type="submit" name="submit" value="Submit"/>
+    </form>
+
+    <form action="actualizar.php" method="get">
+        <h3>Seleccione su Estado Civil</h3>
+        <p><input type="radio" checked name="eCivil"/>Soltero</p>
+        <p><input type="radio" name="eCivil"/>Casado</p>
+        <p><input type="radio" name="eCivil"/>En una relaci&oacute;n</p>
+        <p><input type="radio" name="eCivil"/>Viudo(a)</p>
+
+        <p><input type="submit" value="Enviar"></p>
+    </form>
+
+    <form name="fcolores">
+        <h3>Elija un color y cambie el fondo?</h3>
+        <input type="Radio" name="color" value="ffffff" checked> Blanco <br>
+        <input type="Radio" name="color" value="ff0000" checked> Rojo <br>
+        <input type="Radio" name="color" value="00ff00" checked> Verde <br>
+        <input type="Radio" name="color" value="0000ff" checked> Azul <br>
+        <input type="Radio" name="color" value="ffff00" checked> Amarillo <br>
+        <input type="Radio" name="color" value="00ff00" checked> Turquesa <br>
+        <input type="Radio" name="color" value="ff00ff" checked> Morado <br>
+        <input type="Radio" name="color" value="000000" checked> Negro <br> <br>
+
+        <input type="Button" name="" value="Cambia Color" onclick="cambiaColor()">
+    </form>
+ </body>
+ </html>
